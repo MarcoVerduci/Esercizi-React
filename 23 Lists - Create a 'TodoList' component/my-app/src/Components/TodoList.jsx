@@ -11,7 +11,6 @@ export function TodoList() {
     const handleAddItem = () => {
         if (newItem.trim() !== '') {
             setItems([...items, newItem]);
-            setNewItem('');
         }
     };
 

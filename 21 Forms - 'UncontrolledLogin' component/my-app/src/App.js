@@ -1,9 +1,9 @@
-import { UncontrolledLogin } from './Components/UncontrolledLogin';
+import { Login } from './Components/Login';
 
 function App() {
   return (
     <div>
-      <UncontrolledLogin />
+      <Login />
     </div>
   );
 }

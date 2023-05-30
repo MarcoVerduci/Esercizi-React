@@ -2,7 +2,7 @@ import { UncontrolledLogin } from './Components/UncontrolledLogin';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <UncontrolledLogin />
     </div>
   );

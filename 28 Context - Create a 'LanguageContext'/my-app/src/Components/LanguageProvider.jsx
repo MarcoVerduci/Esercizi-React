@@ -1,21 +1,20 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import LanguageContext from './LanguageContext';
 
 const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('English');
+    const [language, setLanguage] = useState('Italian');
 
-    const handleLanguageChange = (e) => {
-        setLanguage(e.target.value);
+    const handleLanguageChange = (event) => {
+        setLanguage(event.target.value);
     };
 
     return (
         <LanguageContext.Provider value={{ language }}>
             <div>
                 <select value={language} onChange={handleLanguageChange}>
+                    <option value="Italian">Italian</option>
                     <option value="English">English</option>
                     <option value="Spanish">Spanish</option>
-                    <option value="French">French</option>
-                    <option value="German">German</option>
                 </select>
                 {children}
             </div>

@@ -4,8 +4,8 @@ export function TodoList() {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState('');
 
-  const handleInputChange = (e) => {
-    setNewItem(e.target.value);
+  const handleInputChange = (event) => {
+    setNewItem(event.target.value);
   };
 
   const handleAddItem = () => {

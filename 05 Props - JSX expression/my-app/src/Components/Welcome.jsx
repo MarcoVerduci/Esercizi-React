@@ -11,8 +11,3 @@ export class Welcome extends React.Component {
         )
     }
 }
-
-Welcome.defaultProps = {
-    name: <strong>Guest</strong>,
-    age: '"'
-}

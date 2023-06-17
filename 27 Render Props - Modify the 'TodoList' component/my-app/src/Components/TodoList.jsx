@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function TodoList() {
+export function TodoList({ render }) {
     const [items, setItems] = useState([]);
     const [newItem, setNewItem] = useState('');
 
@@ -43,7 +43,7 @@ export function TodoList() {
             <input type="text" value={newItem} onChange={handleInputChange} />
             <button onClick={handleAddItem}>Add</button>
             <button onClick={handleReset}>Reset</button>
-            {renderList()}
+            {render({ items, renderList })}
         </div>
     );
-};
+}

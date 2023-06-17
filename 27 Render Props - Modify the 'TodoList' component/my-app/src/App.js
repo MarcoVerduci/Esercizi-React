@@ -3,7 +3,13 @@ import { TodoList } from './Components/TodoList';
 function App() {
   return (
     <div>
-      <TodoList />
+      <TodoList
+        render={({ items, renderList }) => (
+          <div>
+            {renderList()}
+          </div>
+        )}
+      />
     </div>
   );
 }

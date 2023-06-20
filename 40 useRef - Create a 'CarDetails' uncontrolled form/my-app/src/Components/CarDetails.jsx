@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-export function CarDetails() {
-    const [model, setModel] = useState('');
-    const [year, setYear] = useState('');
-    const [color, setColor] = useState('');
+export function CarDetails({ initialData }) {
+    const [model, setModel] = useState(initialData.model);
+    const [year, setYear] = useState(initialData.year);
+    const [color, setColor] = useState(initialData.color);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,3 +46,4 @@ export function CarDetails() {
         </form>
     );
 };
+

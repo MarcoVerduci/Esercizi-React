@@ -5,9 +5,9 @@ import ShowGithubUser from './Components/ShowGithubUser';
 function App() {
   return (
     <Routes>
-      <Route path="/home"></Route>
-      <Route path="/users/:username" Component={ShowGithubUser}></Route>
-      <Route path="/counter" Component={ClickCounter}></Route>
+      <Route path="/home" />
+      <Route path="/users/:username" Component={ShowGithubUser} />
+      <Route path="/counter" Component={ClickCounter} />
     </Routes>
   );
 }

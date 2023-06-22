@@ -1,27 +1,31 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export function CarDetails({ initialData }) {
-    const [model, setModel] = useState(initialData.model);
-    const [year, setYear] = useState(initialData.year);
-    const [color, setColor] = useState(initialData.color);
+    const formRef = useRef(null);
+
+    useEffect(() => {
+        formRef.current.reset();
+    }, [initialData]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log('Model:', model);
-        console.log('Year:', year);
-        console.log('Color:', color);
+        const formData = new FormData(event.target);
+        const model = formData.get('model');
+        const year = formData.get('year');
+        const color = formData.get('color');
+
+        event.target.reset();
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
             <label htmlFor="model">Model:</label>
             <input
                 type="text"
                 id="model"
                 name="model"
-                value={model}
-                onChange={(e) => setModel(e.target.value)}
+                defaultValue={initialData.model}
             />
 
             <label htmlFor="year">Year:</label>
@@ -29,8 +33,7 @@ export function CarDetails({ initialData }) {
                 type="text"
                 id="year"
                 name="year"
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
+                defaultValue={initialData.year}
             />
 
             <label htmlFor="color">Color:</label>
@@ -38,12 +41,11 @@ export function CarDetails({ initialData }) {
                 type="text"
                 id="color"
                 name="color"
-                value={color}
-                onChange={(e) => setColor(e.target.value)}
+                defaultValue={initialData.color}
             />
 
             <button type="submit">Submit</button>
         </form>
     );
-};
+}
 

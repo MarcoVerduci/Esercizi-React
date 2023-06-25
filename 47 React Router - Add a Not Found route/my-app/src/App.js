@@ -9,7 +9,7 @@ function App() {
       <Route path="/home" />
       <Route path="/users/:username" Component={ShowGithubUser} />
       <Route path="/counter" Component={ClickCounter} />
-      <Route path="/404" Component={NotFound} />
+      <Route path="#" Component={NotFound} />
     </Routes>
   );
 }
